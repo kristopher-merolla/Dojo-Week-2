@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>For a Few Billion</title>
+	<script type="text/javascript" ; use strict>
+		
+	var payment = 0.01; //payment starts off on day 1, as the first payment
+
+	for ( var i = 1 ; i < 30 ; i++) { //in this loop, "i" represents the number of days since the first day (which would be day 0)
+		payment = payment * 2;
+	}
+
+	console.log("After 30 days, the reward would be $" + payment);
+
+
+	var payment2 = 0.01; //payment starts off on day 1, as the first payment
+	var days = 0; //for counting days
+
+	while (payment2 < 10000) { //how long does it take to get to payment2 = $10,000 ?
+		payment2 = payment2 * 2;
+		days++
+	}
+
+	console.log("To reach $10,000 it would take " + (days+1) + " days");
+
+	var payment3 = 0.01; //payment starts off on day 1, as the first payment
+	var days2 = 0; //for counting days
+
+	while (payment3 < 1000000000) { //how long does it take to get to payment2 = $1,000,000,000 ?
+		payment3 = payment3 * 2;
+		days2++
+	}
+
+	console.log("To reach $1,000,000,000 it would take " + (days2+1) + " days");
+
+	var payment4 = 0.01; //payment starts off on day 1, as the first payment
+	var days3 = 0; //for counting days
+
+	while (payment4 < Infinity) { //how long does it take to get to payment2 = infinity ?
+		payment4 = payment4 * 2;
+		days3++
+	}
+
+	console.log("To reach Infinity dollars it would take " + (days3+1) + " days");
+
+	</script>
+
+</head>
+<body>
+
+</body>
+</html>
+
+
+<!-- 
+Goal: 
+
+There is an old tale about a king who offered a servant $10,000 as a reward. The servant instead asked that for 30 days he be given an amount that would double, starting with a penny. (1 penny for the first day, 2 for the second, 4 for the third, then 8, 16, 32 pennies, and so on).
+
+Use for loops to answer the following:
+
+How much was the reward after 30 days?
+remember, a penny isn't 1, but 0.01
+
+Bonus (Only If You Have Time):
+
+How many days would it take the servant to make $10,000?
+How about 1 billion?
+In JavaScript, there is a value Infinity, how many days until the servant has infinite money?
+-->

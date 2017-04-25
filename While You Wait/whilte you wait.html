@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>While You Wait</title>
+	<script type="text/javascript"; use strict>
+		
+		var daysUntilMyBirthday = 60;
+
+		for (var i = 0 ; i < daysUntilMyBirthday; i++) {
+
+			var temp = daysUntilMyBirthday - i;
+		
+			if (temp > 30) {
+				console.log(temp + " days until my birthday. Such a long time... :(");
+			}
+			
+			if (temp <= 30) {
+				if (temp >= 5) {
+					console.log(temp + " days until my birthday. Getting closer! :)");
+				}
+				if (temp < 5) {
+					console.log(temp + " DAYS UNTIL MY BIRTHDAY!!!");
+				}
+			}
+		}
+		console.log("Happy Birthday! Party Time!!");
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+<!--
+GOLAL:
+
+Create a birthday countdown
+
+For every day, print how many days left.
+If it's more than 30 days, print a sad message.
+If it's less than 30 days, print a message that sound excited!
+If it's less than 5 days, SCREAM IT!
+-->

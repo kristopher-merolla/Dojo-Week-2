@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Random Chance</title>
+	<script use strict>
+
+	var winningNumber = 17; //This is the winning number, so whenever the random generator hits this, the machine pays out
+	var winnings = 0; //default winnings start as 0
+		
+	function quarterGame(numQuarters) {
+		for (var i = 0 ; i < numQuarters ; i++) {
+			var win = Math.floor(Math.random()*100);
+			if (win == winningNumber) { //this IF statement will run if the random number (win) matches the winning number (winningNumber)
+				winnings = Math.floor(Math.random()*50+51);
+				console.log("You won "+(winnings+numQuarters-i-1)+" coins total! That is "+winnings+" coins from the slot plus your leftover of "+(numQuarters-i-1)+" quarters");
+				console.log("You won on quarter "+(i+1));
+				break;
+			}
+			if (i == numQuarters-1) {
+				return 0;
+			}
+		}
+	}
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
+
+<!--
+GOAL
+
+Make a function that takes a number of quarters (1 quarter = 1 game).
+
+There is a 1 in 100 chance to win the slot machine (which will give you between 50 - 100 quarters - use Math.random and Math.floor to pick a random number of coins).
+
+While the user still has quarters, use Math.random to determine if they won.
+
+If they ever win, return the number of quarters (ex: they had 50 remaining quarters and won 90, so it should return 140).
+
+Return 0 if all the quarters were wasted.
+-->

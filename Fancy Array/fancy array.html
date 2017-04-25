@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fancy Array</title>
+	<script use strict>
+
+	var arr=["James","Jill","Jane","Jack"]; //define an array
+
+	for (var i = 0 ; i < arr.length ; i++) { //this for loop will simply return the fancy array
+		console.log(i + " -> " + arr[i]);		
+	}
+
+	function fancyArray2(symbol) { //this function will take in a symbol then return the fancy array with user's defined symbol
+		for (var i = 0 ; i < arr.length ; i++) {
+			console.log(i + " " + symbol + " " + arr[i]);		
+		}
+	}
+
+	fancyArray2("=>");
+
+	function fancyArray3(symbol,reverse=false) { //this function will take a symbol and also see if the user wants the array reverse it with default to NOT reverse
+		if (reverse == true) {
+			arr.reverse();
+		}
+		for (var i = 0 ; i < arr.length ; i++) {
+			console.log(i + " " + symbol + " " + arr[i]);		
+		}
+	}
+
+	fancyArray3("=>",true);
+	
+	</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+<!--
+Normally, if you print an array such as ["James", "Jill", "Jane", "Jack"], you will see the following:
+
+[ "James", "Jill", "Jane", "Jack" ]
+Let's make it look fancy! Write a function that will make it print like:
+
+0 -> James
+1 -> Jill
+2 -> Jane
+3 -> Jack
+Bonus (Only If You Have Time):
+
+Let the user pass in the symbol that will print (ex: "->", "=>", "::", "- - -")
+Have an extra parameter reversed. If the user passes true, print the elements in reverse order
+-->

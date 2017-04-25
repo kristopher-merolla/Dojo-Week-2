@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Can I Have the time?</title>
+	<script type="text/javascript"; use strict>
+		
+	var HOUR = 7;
+	var MINUTE = 15;
+	var PERIOD = "PM";
+
+	if(PERIOD == "AM") {
+		if(MINUTE >= 30) {
+			if(HOUR == 11) {
+				console.log("It's almost",HOUR+1,"in the evening")
+			}
+			if(HOUR != 11) {
+				console.log("It's almost",HOUR+1,"in the morning")
+			}
+		}
+		if(MINUTE < 30) {
+			console.log("It's just after",HOUR,"in the morning")
+		}
+	}
+
+	if(PERIOD == "PM") {
+		if(MINUTE >= 30) {
+			if(HOUR == 11) {
+				console.log("It's almost",HOUR+1,"in the morning")
+			}
+			if(HOUR != 11) {
+				console.log("It's almost",HOUR+1,"in the evening")
+			}
+		}
+		if(MINUTE < 30) {
+			console.log("It's just after",HOUR,"in the evening")
+		}
+	}
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
+
+<!-- 
+GOAL:
+
+If minutes less than 30, "just after" the hour, more than 30, "almost" the next hour
+AM / PM, "in the morning", "in the evening", 
+-->

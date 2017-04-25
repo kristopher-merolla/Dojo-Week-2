@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Numbers Only</title>
+	<script use strict>
+		
+
+		var array=[1,"string1",4,6,"string2",2,-4,3.3,"string3"]; //define a sample array containing strings and numbers
+
+		function numOnly() {
+			var arrNew=[];
+			for (var i = 0 ; i < array.length ; i++) {
+				if (typeof array[i] === "number") { //check if the array index value is a number, if true, then push into the new array
+					arrNew.push(array[i]);
+				}
+			}
+			return arrNew;
+		}
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
+
+<!--
+GOAL
+
+Make a function that copies an array, ONLY accepting the items that are numbers
+
+it should RETURN a new array
+-->
