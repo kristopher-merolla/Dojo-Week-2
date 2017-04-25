@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery Functions - Kristopher Merolla</title>
+	<link rel="stylesheet" type="text/css" href="jQuery_fun_css.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script> <!-- link to jQuery library -->
+	<script type="text/javascript">
+		$(document).ready(function(){ //jQuery functions to be called once the page has loaded fully
+			$('.button').click(function(){ //changes ALL buttons
+				
+			});
+
+			$("#add_class_button").click(function() { //changes only "AddClass" button
+				$("#add_class_button").css("background-color","yellow");
+				$("#top_box p").addClass("red");
+				$(".red").css("color","red");
+			});
+						
+			$("#slide_toggle_button").click(function() { //changes only "SlideToggle" button
+				$("#slide_toggle_button").css("background-color","yellow");
+				$("#top_box").slideUp("slow");
+				$("#add_class_button").slideUp("slow");
+				$("#slide_toggle_button").slideToggle("fast","linear",function() {
+					$("#hiding_image").show("fast");
+				});
+			});
+
+			$("#append_button").click(function() { //changes only "Append" button
+				$("#append_button").css("background-color","yellow");
+				counter++;
+				if(counter<3) {
+					$("#bottom_box h1").text("Box Appended");
+					$("#bottom_box p").append("[clicking the append button adds a line each click!]");
+					$("#bottom_box").after(".");
+					$(".appended_header").html("<h2>Box Appended Again!</h2>");
+					$("#bottom_box h1").addClass("appended_header");
+				}
+
+				if(counter>=3 && counter<10) {
+					$(".appended_header").text("That's enough Appends...");
+					$("#bottom_box p").text("3 clicks is fine for this demo ;)");
+					$("#bottom_box").after(".");
+				}
+
+				if(counter>=10) {
+					$("#bottom_box").hide();
+					alert("Just had to keep clicking didn't you!  Guess I'll have to take away that bottom box... :)");
+					$("#bottom_box").before("and that's 10 clicks!");
+				}
+				console.log(counter);
+			});
+
+			$("#hiding_image").click(function() {
+				$("#hiding_image").slideToggle(1000,"linear",function() {
+					$("#slide_header").fadeOut();
+					$("#slide_toggle_button").show("fast");
+					$("#slide_header").fadeIn();
+					$("#top_box").slideDown("fast");
+					$("#add_class_button").slideDown("fast");
+				});
+				$("#slide_toggle_button").css("background-color","white");
+			});
+
+			function after_break() {
+				$("#bottom_box p").text("<br>");
+			}
+
+			var counter = 0;
+
+		}); // End of document.ready()
+
+	</script>
+
+</head>
+<body>
+	<div id="big_wrapper">
+		<div id="top_box">
+			<div class="button" id="add_class_button">AddClass</div>
+			<h1>AddClass</h1>
+			<p>Click the button to add class 'red' to this paragraph</p>
+		</div> <!-- End of top_box -->
+
+		<div id="middle_box">
+			<div class="button" id="slide_toggle_button">SlideToggle</div>
+			<img src="ninja.jpg" alt="hiding ninja" id="hiding_image"/>
+			<h1 id="slide_header">SlideToggle</h1>
+			<p>Click the button to slidetoggle a hidden image</p>
+		</div> <!-- End of middle_box -->
+
+		<div id="bottom_box">
+			<div class="button" id="append_button">Append</div>
+			<h1>Append</h1>
+			<p>Click the button to append a new paragraph</p>
+		</div> <!-- End of bottom_box -->
+	</div> <!--End of big_wrapper -->
+
+	<script>
+		$("#hiding_image").hide(); //script is kept AFTER the body so it will hide the image (remember, page loads top to bottom)
+	</script>
+
+</body>
+</html>
