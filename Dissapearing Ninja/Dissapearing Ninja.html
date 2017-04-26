@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dissapearing Ninja Assignment - Kristopher Merolla</title>
+	<link rel="stylesheet" type="text/css" href="diss_ninja.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script> <!-- link to jQuery library -->
+	<script>
+		$(document).ready(function(){
+			$("img").click(function(){	//this will remove the image that was clicked on, the key is the "this" selector
+				$(this).addClass("hidden");
+				$(this).hide("fast");
+			});
+
+			$("#restore_button").click(function(){ //this will restore the hidden images
+				$(".hidden").show("slow");
+			});
+		}); //end of document.ready() load
+	</script>
+</head>
+<body>
+	<div id="big_wrapper">
+		<h1>jQuery - assignment 1</h1>
+		<div id="image_box"> <!-- This div "image_box" is used only to constrain the images window as images are clicked and hidden -->
+			<img src="yoda.jpg" alt="yoda" />
+			<img src="yoda.jpg" alt="yoda" />
+			<img src="yoda.jpg" alt="yoda" />
+			<img src="yoda.jpg" alt="yoda" />
+			<img src="yoda.jpg" alt="yoda" />
+			<img src="yoda.jpg" alt="yoda" />
+			<img src="yoda.jpg" alt="yoda" />
+			<img src="yoda.jpg" alt="yoda" />
+		</div>
+		<p id="restore_button">Restore</p>
+		</div> <!-- End of big_wrapper -->
+</body>
+</html>

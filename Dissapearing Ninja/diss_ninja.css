@@ -1,0 +1,40 @@
+* {
+	 margin: 0px;
+	 padding: 0px;
+	 font-family: Arial,sans-serif;
+}
+
+img {
+	border: 3px solid black;
+	margin: 6px 6px 6px 0px;
+}
+
+h1 {
+	margin: 20px 0px;
+}
+
+#big_wrapper {
+	width: 900px;
+	height: auto;
+	margin: 0 auto;
+	background-color: white;
+	padding: 20px 40px;
+	border: 2px solid black;
+}
+
+#restore_button {
+	width: auto;
+	height: auto;
+	background-color: green;
+	border: 3px solid black;
+	display: inline-block;
+	padding: 4px 10px;
+	box-shadow: 2px 2px 2px black;
+	color: white;
+	font-size: 80%;
+}
+
+#image_box {
+	width: auto;
+	height: auto;
+}
