@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ninja to Cat Assignment - Kristopher Merolla</title>
+	<link rel="stylesheet" type="text/css" href="ninja_cat.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script> <!-- link to jQuery library -->
+	<script>
+		$(document).ready(function(){
+			$("img").click(function() { //when you click an image, the image clicked on will have it's "src" and "data-alt-src" values swapped
+				var temp = $(this).attr("data-alt-src");
+				$(this).attr("data-alt-src",$(this).attr("src"));
+				$(this).attr("src",temp);
+			});
+		}); //end of document.ready() load
+	</script>
+</head>
+<body>
+	<img src="img/ninja0.png" data-alt-src="img/cat0.png" alt="top image" />
+	<img src="img/ninja1.png" data-alt-src="img/cat1.png" alt="image below top image" />
+	<img src="img/ninja2.png" data-alt-src="img/cat2.png" alt="middle image" />
+	<img src="img/ninja3.png" data-alt-src="img/cat3.png" alt="image above botom image" />
+	<img src="img/ninja4.png" data-alt-src="img/cat4.png" alt="bottom image" />
+</body>
+</html>
