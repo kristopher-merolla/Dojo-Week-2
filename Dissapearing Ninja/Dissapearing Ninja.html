@@ -7,12 +7,15 @@
 	<script>
 		$(document).ready(function(){
 			$("img").click(function(){	//this will remove the image that was clicked on, the key is the "this" selector
-				$(this).addClass("hidden");
-				$(this).hide("fast");
+				var temp = $(this).attr("data-alt-src");
+				$(this).attr("data-alt-src",$(this).attr("src"));
+				$(this).attr("src",temp);
 			});
 
 			$("#restore_button").click(function(){ //this will restore the hidden images
-				$(".hidden").show("slow");
+				$("img").attr("src","yoda.jpg");
+				$("img").attr("data-alt-src","white_space.png");
+
 			});
 		}); //end of document.ready() load
 	</script>
@@ -20,17 +23,15 @@
 <body>
 	<div id="big_wrapper">
 		<h1>jQuery - assignment 1</h1>
-		<div id="image_box"> <!-- This div "image_box" is used only to constrain the images window as images are clicked and hidden -->
-			<img src="yoda.jpg" alt="yoda" />
-			<img src="yoda.jpg" alt="yoda" />
-			<img src="yoda.jpg" alt="yoda" />
-			<img src="yoda.jpg" alt="yoda" />
-			<img src="yoda.jpg" alt="yoda" />
-			<img src="yoda.jpg" alt="yoda" />
-			<img src="yoda.jpg" alt="yoda" />
-			<img src="yoda.jpg" alt="yoda" />
-		</div>
+		<img src="yoda.jpg" data-alt-src="white_space.png" alt="yoda" />
+		<img src="yoda.jpg" data-alt-src="white_space.png" alt="yoda" />
+		<img src="yoda.jpg" data-alt-src="white_space.png" alt="yoda" />
+		<img src="yoda.jpg" data-alt-src="white_space.png" alt="yoda" />
+		<img src="yoda.jpg" data-alt-src="white_space.png" alt="yoda" />
+		<img src="yoda.jpg" data-alt-src="white_space.png" alt="yoda" />
+		<img src="yoda.jpg" data-alt-src="white_space.png" alt="yoda" />
+		<img src="yoda.jpg" data-alt-src="white_space.png" alt="yoda" />
 		<p id="restore_button">Restore</p>
-		</div> <!-- End of big_wrapper -->
+	</div> <!-- End of big_wrapper -->
 </body>
 </html>

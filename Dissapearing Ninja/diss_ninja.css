@@ -7,6 +7,8 @@
 img {
 	border: 3px solid black;
 	margin: 6px 6px 6px 0px;
+	width: 200px;
+	height: 200px;
 }
 
 h1 {
@@ -32,9 +34,4 @@ h1 {
 	box-shadow: 2px 2px 2px black;
 	color: white;
 	font-size: 80%;
-}
-
-#image_box {
-	width: auto;
-	height: auto;
 }
