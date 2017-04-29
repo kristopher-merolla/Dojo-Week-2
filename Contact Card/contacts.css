@@ -10,13 +10,11 @@
 
 form {
 	display: inline-block;
-	background-color: lightblue;
 	vertical-align: top;
 	margin: 40px;
 }
 
 #contact_space {
-	background-color: tan;
 	display: inline-block;
 	width: 400px;
 	min-height: 200px;
@@ -24,15 +22,20 @@ form {
 }
 
 .contact_box {
-	background-color: lightblue;
 	width: 300px;
 	height: auto;
 	border: 2px solid black;
 	margin: 0px auto 10px auto;
 	text-align: center;
+	min-height: 89px;
+	background-color: lightgray;
 }
 
 h1 {
 	margin-top: 20px;
 	margin-bottom: 10px;
+}
+
+p {
+	text-align: left;
 }
