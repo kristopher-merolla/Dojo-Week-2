@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact Card Assignment - Kristopher Merolla</title>
+	<link rel="stylesheet" type="text/css" href="contacts.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script> <!-- link to jQuery library -->
+	<script>
+		var contact_array = [];
+		var i = 0;
+
+		$(document).ready(function(){
+			$("#submit").click(function() {
+				var full_name = $("form").find('input[name="first_name"]').val() + " " + $("form").find('input[name="last_name"]').val();
+				var description = $("form").find('input[name="description"]').val(); //sets the description variable to the form value
+				var box_add_num = i;
+
+				$("#contact_space").append("<div class='contact_box' id='"+box_add_num+"'><h1>"+full_name+"</h1>Click for description!</div>");
+
+				contact_array.push(full_name);
+				contact_array.push(description);
+				contact_array.push(0); //this position in our contact_array will represent how many times the array is clicked by the user
+				i+=3;
+
+				return false
+			});
+
+			$(document).on("click",".contact_box",function() {
+				var x = Number($(this).attr('id')); //x represents the position of the name value in the contact_array
+				console.log("the full_name is:"+contact_array[x]);
+				console.log("the description is:"+contact_array[(x+1)]);
+				contact_array[x+2] += 1;  //after a click, this line increments the position of the arrays flip counter, which is defined below as y
+				var y = (contact_array[x+2])%2; //y represents the current status of the contact card either to be showing name or description
+				if (y==0) {
+					console.log("Toggle so that Name showing");
+				}
+				if (y==1) {
+					console.log("Toggle so that description showing");
+				}
+			});
+
+		});
+	</script>
+</head>
+<body>
+	<div id="big_wrapper">
+		<form>
+			<label>First Name:</label><input type="text" name="first_name" value="Testing"><br>
+			<label>Last Name:</label><input type="text" name="last_name" value="name"><br><br>
+			<label>Description:</label><br><input type="text" name="description" value="Enter Description" id="description_box"><br>
+			<input type="submit" value="Add User" id="submit">
+		</form>
+		<div id="contact_space">
+
+		</div> <!-- space where our dynamic-generated content will sit -->
+		</div> <!-- End of big_wrapper -->
+
+</body>
+</html>

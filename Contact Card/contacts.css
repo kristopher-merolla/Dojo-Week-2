@@ -1,0 +1,38 @@
+* {
+	 margin: 0px;
+	 padding: 0px;
+	 font-family: Arial,sans-serif;
+}
+
+#description_box {
+	width: 204px;
+}
+
+form {
+	display: inline-block;
+	background-color: lightblue;
+	vertical-align: top;
+	margin: 40px;
+}
+
+#contact_space {
+	background-color: tan;
+	display: inline-block;
+	width: 400px;
+	min-height: 200px;
+	padding-top: 20px;
+}
+
+.contact_box {
+	background-color: lightblue;
+	width: 300px;
+	height: auto;
+	border: 2px solid black;
+	margin: 0px auto 10px auto;
+	text-align: center;
+}
+
+h1 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
