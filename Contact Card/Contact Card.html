@@ -5,21 +5,21 @@
 	<link rel="stylesheet" type="text/css" href="contacts.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script> <!-- link to jQuery library -->
 	<script>
-		var contact_array = [];
-		var i = 0;
+		var contact_array = []; //this will be our array of contacts full_name, description, toggle status
+		var i = 0; //i will be used to increment the starting of each newly added contact box when submit is clicked
 
 		$(document).ready(function(){
 			$("#submit").click(function() {
 				var full_name = $("form").find('input[name="first_name"]').val() + " " + $("form").find('input[name="last_name"]').val();
 				var description = $("form").find('input[name="description"]').val(); //sets the description variable to the form value
-				var box_add_num = i;
+				var box_add_num = i; //box_add_num will be used as we add boxes to keep track of which box we are adding
 
 				$("#contact_space").append("<div class='contact_box' id='"+box_add_num+"'><h1>"+full_name+"</h1>Click for description!</div>");
 
 				contact_array.push(full_name);
 				contact_array.push(description);
 				contact_array.push(0); //this position in our contact_array will represent how many times the array is clicked by the user
-				i+=3;
+				i+=3; //increment the
 
 				return false
 			});
@@ -28,7 +28,7 @@
 				var x = Number($(this).attr('id')); //x represents the position of the name value in the contact_array
 				console.log("the full_name is:"+contact_array[x]);
 				console.log("the description is:"+contact_array[(x+1)]);
-				contact_array[x+2] += 1;  //after a click, this line increments the position of the arrays flip counter, which is defined below as y
+				contact_array[x+2] += 1; //after a click, this line increments the position of the arrays flip counter, which is defined below as y
 				var y = (contact_array[x+2])%2; //y represents the current status of the contact card either to be showing name or description
 				if (y==0) {
 					console.log("Toggle so that Name showing");
