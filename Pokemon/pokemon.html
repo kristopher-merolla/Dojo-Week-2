@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pokemon - API+AJAX assignment 1</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script> <!-- link to jQuery library -->
+	<script>
+
+		$(document).ready(function() {
+			$.get("http://pokeapi.co/api/v1/pokemon/",function(res) {
+				for (var i = 1; i < 152; i++) {
+					var url = "<img src='http://pokeapi.co/media/img/"+i+".png'>"
+					$('#pokemon_space').append(url);
+				}
+			},'json');
+		});
+		
+	</script>
+</head>
+<body>
+	<div id="pokemon_space">
+		<!-- This space will be filed with our dynamically rendered pokemon! -->
+	</div>
+</body>
+</html>

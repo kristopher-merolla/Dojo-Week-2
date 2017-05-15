@@ -1,0 +1,26 @@
+#pokemon_space {
+	width: 780px;
+	height: 611px;
+	overflow: scroll;
+	display: inline-block;
+}
+
+#pokedex_space {
+	border-left: 20px solid red;
+	border-top: 20px solid red;
+	border-right: 20px solid red;
+	border-bottom: 60px solid red;
+	display: inline-block;
+	vertical-align: top;
+	width: 200px;
+	height: 450px;
+	text-align: left;
+}
+
+img {
+	vertical-align: middle;
+}
+
+h1 {
+	text-align: center;
+}
