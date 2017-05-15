@@ -11,7 +11,7 @@
 			pokemon_click_count = 0;
 
 			function pokemon_creator() {
-				$.get("http://pokeapi.co/api/v1/pokemon/",function(res) {
+				$.get("http://pokeapi.co/api/v1/pokemon/",function(res) { // AJAX
 					for (var i = 1; i < 152; i++) {
 						var url = "<img src='http://pokeapi.co/media/img/"+i+".png' class='pokemon_img' id='"+i+"'>"
 						$('#pokemon_space').append(url);
@@ -20,7 +20,7 @@
 			}
 
 			function pokedex_creator(x) {
-				$.get("http://pokeapi.co/api/v1/pokemon/"+x.id+"/", function(res) {
+				$.get("http://pokeapi.co/api/v1/pokemon/"+x.id+"/", function(res) { // AJAX
 					var type = res.types[0].name;
 					var height = res.height;
 					var weight = res.weight;
